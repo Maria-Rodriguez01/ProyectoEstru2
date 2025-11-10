@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-43f08feef6f86abb63d3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ProyectoEstru2MariaRodriguez",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ProyectoEstru2MariaRodriguez::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProyectoEstru2MariaRodriguez-Debug-d1a22dba052b1d6c5bae.json",
+					"name" : "ProyectoEstru2MariaRodriguez",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ProyectoEstru2MariaRodriguez_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProyectoEstru2MariaRodriguez_autogen-Debug-0fa6ebd1a4ac0aad4680.json",
+					"name" : "ProyectoEstru2MariaRodriguez_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ProyectoEstru2MariaRodriguez_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProyectoEstru2MariaRodriguez_autogen_timestamp_deps-Debug-4b73cdd646e406ad0fff.json",
+					"name" : "ProyectoEstru2MariaRodriguez_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Maria Gabriela/OneDrive/Documents/ProyectoEstru2MariaRodriguez/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+		"source" : "C:/Users/Maria Gabriela/OneDrive/Documents/ProyectoEstru2MariaRodriguez"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
