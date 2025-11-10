@@ -76,7 +76,7 @@ private:
     minijuegopolitica *politicaWin = nullptr;
     minijuegociencia *cienciaWin = nullptr;
 
-    // Flags de entrada única (si quieres limitar)
+    // Flags de entrada única
     bool historiaEnteredOnce = false;
     bool arteEnteredOnce = false;
     bool politicaEnteredOnce = false;

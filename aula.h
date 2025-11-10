@@ -24,8 +24,6 @@ public:
     ~Aula() override = default;
 
 signals:
-    // 🔔 Progreso “real” basado en preguntas (libros) acertadas.
-    // completado = (respondidas == total)
     void progresoAula(bool completado, int respondidas, int total);
 
 protected:
@@ -72,8 +70,8 @@ private:
     // Preguntas y respuestas
     QVector<QString>  questions_;
     QVector<QString>  optA_, optB_, optC_, optD_;
-    QVector<int>      answers_;        // índice correcto 0..3
-    QMap<int,QString> pistas_;         // pista por índice de pregunta (1..6)
+    QVector<int>      answers_;
+    QMap<int,QString> pistas_;
 
     // Panel de pregunta
     QWidget*              qPanel_  = nullptr;
@@ -89,13 +87,13 @@ private:
     // Constantes
     static constexpr int  BG_W = 1125;
     static constexpr int  BG_H = 683;
-    static constexpr int  BOOK_RADIUS = 40;   // radio pequeño (pedido)
+    static constexpr int  BOOK_RADIUS = 40;
     static constexpr int  NPC_RADIUS  = 55;
 
     // Rutas
     QPixmap safeLoad(const QString& path, const QSize& fb = QSize(512,512));
     void    loadBackground();
-    void    fitView();  // evita que se vea diminuto
+    void    fitView();
 
     // construcción de escena
     void buildUI();
@@ -114,13 +112,12 @@ private:
 
     // preguntas
     void abrirPregunta(int idx);
-    bool panelAbierto_ = false;   // cuando el panel de respuesta “final” está visible
+    bool panelAbierto_ = false;
 
     // respuesta final
     void showAnswerPanel();
     static QString normalize(const QString&);
 
-    // 🔸 Emisor centralizado del progreso
     void emitAulaProgress();
 };
 

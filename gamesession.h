@@ -11,7 +11,7 @@ public:
 
     void start();       // iniciar/reiniciar y comenzar a contar
     void stop();        // detener, sin borrar el tiempo acumulado
-    void reset();       // poner a cero (para nuevo jugador)
+    void reset();       // poner a cero
 
     bool isRunning() const { return running_; }
     qint64 elapsedMs() const { return timer_.isValid() ? timer_.elapsed() : 0; }

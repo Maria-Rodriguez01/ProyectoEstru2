@@ -49,7 +49,7 @@ private:
     QLabel*               statusLabel_ = nullptr;
 
     // --- triggers / colisiones ---
-    QGraphicsRectItem*   triggerAula_        = nullptr;   // esquina izquierda
+    QGraphicsRectItem*   triggerAula_        = nullptr;   //esquina izquierda
     QGraphicsRectItem*   triggerLab_         = nullptr;   // esquina derecha
     QGraphicsRectItem*   triggerPuertaArr_   = nullptr;   // puerta superior para salir
 

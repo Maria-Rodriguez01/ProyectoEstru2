@@ -10,8 +10,8 @@ Lobby::Lobby(QWidget *parent)
     : QWidget(parent)
 {
     setWindowTitle("El camino al conocimiento");
-    resize(900, 600); // 👈 tamaño inicial más pequeño
-    setMinimumSize(640, 480); // 👈 mínimo razonable
+    resize(900, 600);
+    setMinimumSize(640, 480);
 
     // === Fondo ===
     background = QPixmap("C:/Users/Maria Gabriela/OneDrive/Documents/ProyectoEstru2MariaRodriguez/Assets/Lobby.png");

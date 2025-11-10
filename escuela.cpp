@@ -173,7 +173,7 @@ void Escuela::abrirAula()
     aulaWin_ = new Aula();
     aulaWin_->setAttribute(Qt::WA_DeleteOnClose);
 
-    // 🔗 Conectamos a señales de progreso/finalización (ver cambios en Aula más abajo)
+    // Conectamos a señales de progreso/finalización (ver cambios en Aula más abajo)
     connect(aulaWin_, SIGNAL(progresoAula(bool,int,int)),
             this,     SLOT(onAulaProgreso(bool,int,int)));
 
@@ -190,7 +190,7 @@ void Escuela::abrirLaboratorio()
     labWin_ = new Laboratorio();
     labWin_->setAttribute(Qt::WA_DeleteOnClose);
 
-    // 🔗 Conectamos a señales de progreso/finalización (ver cambios en Laboratorio más abajo)
+    // Conectamos a señales de progreso/finalización (ver cambios en Laboratorio más abajo)
     connect(labWin_, SIGNAL(progresoLaboratorio(bool,int,int)),
             this,    SLOT(onLaboratorioProgreso(bool,int,int)));
 

@@ -61,8 +61,6 @@ private:
 
     void setInitialFrame();
     void updatePosition();
-
-    // Crea un spritesheet de respaldo suficientemente grande
     QPixmap makeFallbackSheet() const;
 };
 

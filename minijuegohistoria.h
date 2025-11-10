@@ -15,7 +15,7 @@ public:
     explicit MinijuegoHistoria(QWidget *parent = nullptr);
 
 signals:
-    // ► Se emite al terminar. true si todas correctas (perfecto 5/5)
+    // S/e emite al terminar. true si todas correctas (perfecto 5/5)
     void quizFinished(bool allCorrect);
 
 protected:
@@ -41,7 +41,7 @@ private:
     QLabel *progressLabel_ = nullptr;
     QLabel *puffleLabel_ = nullptr;
 
-    // Feedback (debajo de opciones)
+    // Feedback
     QLabel *feedbackLabel_ = nullptr;
 
     // Sprites puffle (4 moods)

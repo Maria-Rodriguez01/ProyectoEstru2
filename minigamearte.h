@@ -15,7 +15,7 @@ public:
     explicit MinigameArte(QWidget *parent = nullptr);
 
 signals:
-    // ► Se emite al terminar. true si todas correctas
+    //  Se emite al terminar. true si todas correctas
     void quizFinished(bool allCorrect);
 
 protected:

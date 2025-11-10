@@ -18,11 +18,11 @@ class Nivel3Combate : public QGraphicsView
 public:
     enum class Side { None, Empirista, Racionalista };
 
-    // heartsPlayer = corazones iniciales del jugador (los que ganas en MainWindow)
+    // heartsPlayer = corazones iniciales del jugador
     explicit Nivel3Combate(Side playerSide, int heartsPlayer = 1, QWidget *parent = nullptr);
 
 signals:
-    void matchFinished();                     // ⬅️ para volver al mapa al terminar
+    void matchFinished();                     // ️ para volver al mapa al terminar
 
 protected:
     void resizeEvent(QResizeEvent *e) override;

@@ -360,10 +360,10 @@ void Laboratorio::onOptionClicked()
 
     if (chosen == correct){
         M.progress++;
-        respondidas_++;                     // 🔹 suma global
+        respondidas_++;                     //  suma global
         qPanel_->hide();
 
-        // 🔔 Progreso tras acertar
+        // Progreso tras acertar
         emitLabProgress();
 
         if (todasLasPreguntasResueltas()){

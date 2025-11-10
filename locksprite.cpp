@@ -10,7 +10,7 @@ LockSprite::LockSprite(const QString& spritesheetPath,
 {
     QPixmap sheet(spritesheetPath);
     if (sheet.isNull()) {
-        qWarning() << "⚠️ LockSprite: no cargó spritesheet:" << spritesheetPath;
+        qWarning() << " LockSprite: no cargó spritesheet:" << spritesheetPath;
         // Placeholder rojo (para detectar ruta mal puesta)
         QPixmap ph(24,24); ph.fill(QColor(200,30,30));
         setPixmap(ph);

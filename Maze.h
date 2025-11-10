@@ -7,7 +7,7 @@ enum class TileType { Wall, Floor, Start, Exit, Door };
 
 struct Cell {
     TileType type = TileType::Wall;
-    int doorIndex = -1; // 0..4 para D1..D5
+    int doorIndex = -1;
 };
 
 struct Maze {

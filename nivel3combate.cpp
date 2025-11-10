@@ -267,7 +267,7 @@ void Nivel3Combate::fitView()
         scene_->setSceneRect(bgItem_->pixmap().rect());
     resetTransform();
     fitInView(scene_->sceneRect(), Qt::KeepAspectRatio);
-    layoutUI();                  // ⬅️ importante
+    layoutUI();                  // ️ importante
 }
 
 
@@ -317,7 +317,7 @@ void Nivel3Combate::updateQuestionLayout()
 void Nivel3Combate::resizeEvent(QResizeEvent *e)
 {
     QGraphicsView::resizeEvent(e);
-    fitView();   // ⬅️ nunca queda pequeño
+    fitView();   //  nunca queda pequeño
 }
 
 void Nivel3Combate::askNextQuestion()
@@ -453,7 +453,7 @@ void Nivel3Combate::updateHeartsUI()
                       .arg(hearts(cpuHearts_)).arg(cpuHearts_);
     hudLabel_->setText(txt);
     hudLabel_->adjustSize();
-    layoutUI(); // ⬅️ recoloca abajo con el tamaño nuevo
+    layoutUI(); //️ recoloca abajo con el tamaño nuevo
 }
 
 void Nivel3Combate::endMatch(bool playerWon)

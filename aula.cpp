@@ -50,7 +50,7 @@ Aula::Aula(QWidget *parent)
     buildQuestions();
     buildUI();
 
-    // ⏱️ loop
+    //  loop
     timer_ = new QTimer(this);
     timer_->setInterval(100);
     connect(timer_, &QTimer::timeout, this, &Aula::tick);
@@ -58,7 +58,7 @@ Aula::Aula(QWidget *parent)
 
     fitView();
 
-    // 🔔 Emite estado inicial (0 resueltas de 6)
+    //  Emite estado inicial (0 resueltas de 6)
     emitAulaProgress();
 }
 

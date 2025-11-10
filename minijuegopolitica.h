@@ -11,7 +11,7 @@
 class QGraphicsScene;
 class QGraphicsView;
 class QGraphicsPixmapItem;
-class QLabel;              // <-- ya estaba forward-declarado
+class QLabel;
 class QButtonGroup;
 class QRadioButton;
 class QPushButton;
@@ -82,7 +82,7 @@ private:
     static constexpr int kDoorCount = 5;
     static constexpr unsigned kAllVisitedMask = (1u << kDoorCount) - 1;
 
-    // -------- NUEVO: aviso flotante + temporizador de cierre --------
+    // -------- aviso flotante + temporizador de cierre --------
     QLabel* toast_ = nullptr;
 };
 

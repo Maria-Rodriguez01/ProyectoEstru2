@@ -210,10 +210,8 @@ void MainWindow::layoutLocks()
 // --------- Ruleta ----------
 void MainWindow::tryUnlockNivel3()
 {
-    // Solo considerar Nivel 3 si todos los minijuegos están desbloqueados por la ruleta
     if (!allRouletteUnlocked()) return;
 
-    // Se exige ≥1 corazón para habilitar Nivel 3
     const int h = heartBar ? heartBar->hearts() : 0;
     if (h >= 1) {
         if (locksByCategory.contains("Nivel3") && locksByCategory["Nivel3"]) {
@@ -232,7 +230,6 @@ void MainWindow::unlockFromRoulette(const QString &category)
 
     unlockedCats.insert(category.trimmed());
 
-    // No cerramos aquí. Solo re-evaluamos Nivel3 (requiere ≥1 corazón).
     tryUnlockNivel3();
 }
 
@@ -362,7 +359,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
                 if (!arteWin) {
                     arteWin = new MinigameArte();
 
-                    // ✅ Premia si terminó perfecto
+                    //  Premia si terminó perfecto
                     connect(arteWin, &MinigameArte::quizFinished,
                             this, [this](bool perfect){
                                 if (perfect && heartBar) heartBar->addHeart(1);
@@ -383,7 +380,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
                 if (!politicaWin) {
                     politicaWin = new minijuegopolitica();
 
-                    // ✅ Premia si el juego se completó con éxito
+                    //  Premia si el juego se completó con éxito
                     connect(politicaWin, &minijuegopolitica::juegoCompletado,
                             this, [this](bool exito){
                                 if (exito && heartBar) heartBar->addHeart(1);
@@ -404,7 +401,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
                 if (!cienciaWin) {
                     cienciaWin = new minijuegociencia();
 
-                    // ✅ Premia solo si atrapó todos (got == total); ajusta si quieres premiar distinto
+                    //  Premia solo si atrapó todos (got == total); ajusta si quieres premiar distinto
                     connect(cienciaWin, &minijuegociencia::juegoCompletado,
                             this, [this](bool exito, int got, int total){
                                 if (exito && got == total && heartBar) heartBar->addHeart(1);

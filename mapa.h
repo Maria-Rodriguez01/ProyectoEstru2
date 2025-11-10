@@ -11,7 +11,7 @@
 
 struct NodoNivel {
     QString nombre;
-    QPointF posRel;                   // posición relativa (0–1)
+    QPointF posRel;                   // posición relativa
     bool desbloqueado = false;
     QVector<QString> conexiones;      // nombres de los niveles conectados
     QPushButton* boton = nullptr;     // botón asociado en la GUI
@@ -39,9 +39,9 @@ private:
     void colocarBotones();
     void actualizarBotones();
     void desbloquearVecinos(const QString &nivelActual);
-    QRect drawRect() const;                 // rect donde se dibuja el fondo escalado
-    bool allLevelsCompleted() const;        // ¿Nivel 1..4 completados?
-    void actualizarRankingBtn();            // habilitar ranking según progreso
+    QRect drawRect() const;
+    bool allLevelsCompleted() const;
+    void actualizarRankingBtn();
 
 private:
     // fondo
@@ -53,7 +53,7 @@ private:
     QString nivelActivo_;
 
     // progreso
-    QSet<QString> completados_;        // niveles completados (al cerrar ventana)
+    QSet<QString> completados_;        // niveles completados
 
     // botones extra
     QPushButton *btnRanking_ = nullptr;

@@ -23,7 +23,6 @@ public:
     ~Laboratorio() override = default;
 
 signals:
-    // 🔔 Progreso “real”: respondidas y total (5). completado si respondidas == total.
     void progresoLaboratorio(bool completado, int respondidas, int total);
 
 protected:
@@ -72,7 +71,7 @@ private:
     int mesaActual_ = -1;
 
     // --- Estado ---
-    int  totalPreguntas_  = 5;   // 2 + 2 + 1
+    int  totalPreguntas_  = 5;
     int  respondidas_     = 0;   // acumuladas
     bool finalizado_      = false;
     QPointF prevSafePos_;
@@ -113,7 +112,7 @@ private:
     void hablarConDescartes();
     bool  todasLasPreguntasResueltas() const;
 
-    // 🔸 Emisor centralizado del progreso
+    // Emisor centralizado del progreso
     void emitLabProgress();
 };
 

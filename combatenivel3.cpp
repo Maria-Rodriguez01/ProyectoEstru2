@@ -71,7 +71,7 @@ void CombateNivel3::showEvent(QShowEvent *e)
 {
     QGraphicsView::showEvent(e);
 
-    initOnce();  // ⬅️ CARGA FONDO + sceneRect
+    initOnce();
 
     const QRect a = QGuiApplication::primaryScreen()->availableGeometry();
     resize(int(a.width()*0.90), int(a.height()*0.90));
@@ -246,10 +246,10 @@ void CombateNivel3::keyPressEvent(QKeyEvent *event)
             // Cuando termina el combate, cerramos esta selección para que el Mapa reaparezca.
             connect(comb, &Nivel3Combate::matchFinished, this, [this, comb](){
                 comb->deleteLater();
-                this->close();     // ⬅️ el mapa está conectado a destroyed(this)
+                this->close();
             });
 
-            this->hide();          // ⬅️ no cerrar ahora (evita que el mapa se muestre de inmediato)
+            this->hide();
             comb->show();
             comb->raise();
             comb->activateWindow();
@@ -292,9 +292,8 @@ void CombateNivel3::keyReleaseEvent(QKeyEvent *event)
 void CombateNivel3::resizeEvent(QResizeEvent *event)
 {
     QGraphicsView::resizeEvent(event);
-    fitView();   // ⬅️ nunca queda pequeño
+    fitView();
 }
-
 void CombateNivel3::setDebugTriggersVisible(bool visible)
 {
     debugVisible_ = visible;
