@@ -88,24 +88,20 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setRenderHint(QPainter::SmoothPixmapTransform);
     ui->graphicsView->setDragMode(QGraphicsView::NoDrag);
 
-    // Ajustar ventana a 90% de pantalla, sin exceder el fondo
-    const QRect avail = QGuiApplication::primaryScreen()->availableGeometry();
-    const double sx = (avail.width()  * 0.90) / BACKGROUND_WIDTH;
-    const double sy = (avail.height() * 0.90) / BACKGROUND_HEIGHT;
-    const double scale = std::min(1.0, std::min(sx, sy));
-    const int W = int(BACKGROUND_WIDTH  * scale);
-    const int H = int(BACKGROUND_HEIGHT * scale);
-    setMinimumSize(W, H);
-    setMaximumSize(W, H);
-    resize(W, H);
-
-    // --- Centrar ventana en pantalla ---
+    // --- Ajustar y centrar la ventana estilo Club Penguin ---
     const QRect screenGeometry = QGuiApplication::primaryScreen()->availableGeometry();
+
+    const double scale = 0.90;
+    const int targetW = static_cast<int>(screenGeometry.width() * scale);
+    const int targetH = static_cast<int>(screenGeometry.height() * scale);
+
+    resize(targetW, targetH);
     move(screenGeometry.center() - rect().center());
 
-    // Fondo (MIEMBRO backgroundItem)
+    // --- Fondo ---
     QPixmap bg(BACKGROUND_PATH);
     if (!bg.isNull()) {
+        // Escalar para ocupar todo el área visible sin franjas negras
         QPixmap scaled = bg.scaled(BACKGROUND_WIDTH, BACKGROUND_HEIGHT,
                                    Qt::KeepAspectRatioByExpanding,
                                    Qt::SmoothTransformation);
@@ -115,7 +111,9 @@ MainWindow::MainWindow(QWidget *parent)
     } else {
         scene->setBackgroundBrush(Qt::darkBlue);
     }
-    ui->graphicsView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
+
+    // Asegurar que el fondo llene toda el área de la vista
+    ui->graphicsView->fitInView(scene->sceneRect(), Qt::KeepAspectRatioByExpanding);
 
     // Personaje
     penguin = new Personaje();
@@ -174,7 +172,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(proximityTimer, &QTimer::timeout, this, &MainWindow::proximityTick);
     proximityTimer->start();
 
-    // HUD
+    // HUD (corazones)
     setupHUD();
 
     setFocusPolicy(Qt::StrongFocus);
